@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    
+}
+
+html,body{
+    height: 100%;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(166,249,224);
+background: linear-gradient(90deg, rgba(166,249,224,1) 16%, rgba(0,216,255,1) 100%);
+}
+
+
+
+.image-container>img{
+    width: 75%;
+    height: 50%;
+    align-items: center;
+    display: flex;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3.5rem;
+    padding-left: 50px;
+}
+
+main > .textos{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.textos > h1{
+    font-size: 6.938rem;
+    text-align: center;
+    line-height: 8.13rem ;
+    margin-bottom: 1.2rem;
+}
+.textos > h3{
+    font-size: 1.813rem;
+    font-weight: 700;
+    line-height:2.125rem;
+    letter-spacing: 0rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+}
+
+.btn-pg1{
+    background-color:#27374D ;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius:35px ;
+}
+.btn-pg1:hover{
+    background-color: #DDE6ED;
+    color: black;
+}
+
+@media screen and (max-width: 923px){
+
+    main{
+        flex-direction: column;
+        margin-left: 0;
+        padding: 25px 25px;
+    }
+
+    .textos>h1{
+        font-size: 50px; 
+    }
+     .image-container{
+        margin-top: 5.3rem;
+        width: 75%;
+    }
+}
