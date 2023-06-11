@@ -69,6 +69,46 @@ main > .textos{
     color: black;
 }
 
+.btn{
+    flex-direction: row;
+    display: flex;
+    user-select: none;
+    margin: 15px;
+    
+}
+
+.btn1:hover{
+    background-color: #E3FDFD;
+    color: black;
+}
+.btn2:hover{
+    background-color: #E3FDFD;
+    
+    color: black;
+}
+
+.btn1{
+    background: #71C9CE;
+    color: #ffffff;
+    padding: 10px 25px;
+    margin: 15px;
+    border-radius: 35px;
+    text-decoration: none;
+   
+}
+
+.btn2{
+    background: #71C9CE;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 35px;
+    margin: 15px;
+    text-decoration: none;
+    margin-top: 15px;
+   
+}
+
+
 @media screen and (max-width: 923px){
 
     main{
