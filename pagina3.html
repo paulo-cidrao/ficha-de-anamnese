@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Bem-vindo</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./imgs/icon.png" />
+  </head>
+  <body>
+    <main>
+      <div class="image-container">
+        <img src="./imgs/5.svg" alt="" />
+      </div>
+      <form class="form">
+        <p class="txt1">Você usa medicamentos de uso continuo?</p>
+        <label for="cadastro">
+          <select name="select" class="select">
+            <option value="criarConta" selected>Não, faço o uso</option>
+            <option value="criarConta">Sim, faço o uso</option>
+          </select>
+        </label>
+        <p class="txt2">Qual a prescrição do medicamento?</p>
+        <ul class="inputs">
+          <li>
+            <input name="options-group-1" type="radio" class="opt1" />
+            <label for="opt1">Hipertensão</label>
+          </li>
+          <li>
+            <input name="options-group-1" type="radio" class="opt2" />
+            <label for="opt2">Rinite e alergias</label>
+          </li>
+          <li>
+            <input name="options-group-1" type="radio" class="opt3" />
+            <label for="opt3"> psiquiátricos</label>
+          </li>
+          <li>
+            <input name="options-group-1" type="radio" class="opt4" />
+            <label for="opt4">Anti-inflamatorios</label>
+          </li>
+          <li>
+            <input name="options-group-1" type="radio" class="opt5" />
+            <label for="opt5">Não se aplica</label>
+          </li>
+        </ul>
+        <div class="valid"></div>
+        <div class="botoes">
+          <div>
+            <a href="./pagina2.html">Voltar</a>
+
+            <a onclick="pag3()" class="disable">Proximo</a>
+          </div>
+          <a
+            href="./pagina4.html"
+            onmouseenter="hover3(event)"
+            onmouseleave="out3(event)"
+            >Pular</a
+          >
+        </div>
+      </form>
+    </main>
+    <script
+      src="https://kit.fontawesome.com/86df6f6ede.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
