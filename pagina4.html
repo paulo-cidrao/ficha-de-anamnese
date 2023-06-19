@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Survey form</title>
+</head>
+<body>
+    <main>
+        <div class="image-container">
+            <img src="./imgs/4.svg" alt="" />
+          </div>
+        <form class="form">
+            <p class="txt1">Você ficou teve algum sintoma nas ultimas semanas?</p>
+            <label for="cadastro">
+                <select name="select" class="select">
+                    <option value="" selected disabled>Selecione uma das opções:</option>
+                    <option value="Sim_tive" >Sim, tive alguns sintomas</option>
+                    <option value="Não_tive">Não tive nenhum sintoma</option>
+               </select>
+            </label>
+            <p class="txt2"><br>Quais desses sintomas você teve?</p>
+            <ul class="inputs">
+                <li>
+                    <input name="options-group-1" type="checkbox" class="opt1">
+                    <label for="opt1">Dor de cabeça</label>
+                </li>
+                <li>
+                    <input name="options-group-1" type="checkbox" class="opt2">
+                    <label for="opt2">Perda do olfato</label>
+                </li>
+                <li>
+                    <input name="options-group-1" type="checkbox" class="opt3">
+                    <label for="opt3">cansaço</label>
+                </li>
+                <li>
+                    <input name="options-group-1" type="checkbox" class="opt4">
+                    <label for="opt4">Tontura constante</label>
+                </li>
+            </ul>
+            <div class="valid">
+                
+            </div>
+            <div class="botoes">
+                <div>
+                    <a href="./pagina3.html">Voltar</a>
+                    <a onclick="checks()">Proxima</a>
+                </div>
+                <a href="./" onmouseenter="hoverpgs(event)" onmouseleave="outpgs(event)">Pular</a>
+            </div>
+        </form>
+    </main>
+    <script src="https://kit.fontawesome.com/86df6f6ede.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
