@@ -44,3 +44,31 @@ function pag3() {
         window.location.href = "./pagina4.html";
     }
 }
+/////////////////
+// validação da pagina 4//
+/////////////////
+var botoescheck = Array.prototype.slice.call(document.querySelectorAll('.form input[type="checkbox"]'));
+function pag4() {
+    var check = botoescheck.some(function (checkButton) { return checkButton.checked; });
+    var valorSelecionadochecks = select.value;
+    var listaDeValorescheck = [];
+    inputs.forEach(function (inputs) {
+        if (inputs.checked) {
+            listaDeValorescheck.push(inputs.value);
+        }
+    });
+    console.log(listaDeValorescheck);
+    console.log(valorSelecionadochecks);
+    if (!check) {
+        error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor, marque pelos menos uma das opções acima!";
+    }
+    if (valorSelecionadochecks.length == 0) {
+        error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor, informe se você teve algum sintoma recentemente!";
+    }
+    if (!!check && valorSelecionadochecks.length != 0) {
+        console.log("deu certo");
+        localStorage.setItem("Relato_de_sintomas", valorSelecionadochecks);
+        localStorage.setItem("Sintomas", JSON.stringify(listaDeValorescheck));
+        window.location.href = "./pagina5.html";
+    }
+}

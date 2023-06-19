@@ -25,8 +25,8 @@ const inputs = Array.prototype.slice.call(lista.getElementsByTagName("input")) a
 
 
 function pag3(){
-    const check = radioButtons.some((radioButton: any) => (radioButton as any as HTMLInputElement).checked);
-    const valorSelecionado = select.value;
+    let check = radioButtons.some((radioButton: any) => (radioButton as any as HTMLInputElement).checked);
+    let valorSelecionado = select.value;
     let listaDeValores:string = ""
     inputs.forEach((input) => {
         if (input.checked) {
@@ -47,4 +47,36 @@ function pag3(){
        window.location.href="./pagina4.html";
     }
 
+}
+/////////////////
+// validação da pagina 4//
+/////////////////
+const botoescheck = Array.prototype.slice.call(document.querySelectorAll('.form input[type="checkbox"]'));
+
+function pag4(){
+    let check = botoescheck.some((checkButton: { checked: any; }) => checkButton.checked);
+    let valorSelecionadochecks = (select as HTMLSelectElement).value;
+    let listaDeValorescheck:any[] = []
+
+    inputs.forEach((inputs) => {
+        if(inputs.checked){
+            listaDeValorescheck.push(inputs.value);
+        }
+    });
+
+    console.log( listaDeValorescheck)
+    console.log(valorSelecionadochecks)
+
+    if(!check){
+        error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor, marque pelos menos uma das opções acima!";
+    }
+    if(valorSelecionadochecks.length == 0){
+        error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor, informe se você teve algum sintoma recentemente!";
+    }
+    if(!!check && valorSelecionadochecks.length !=0){
+        console.log("deu certo")
+        localStorage.setItem("Relato_de_sintomas",valorSelecionadochecks);
+        localStorage.setItem("Sintomas", JSON.stringify(listaDeValorescheck));
+        window.location.href = "./pagina5.html";
+    }
 }
