@@ -24,30 +24,31 @@
         <p class="txt1">Você usa medicamentos de uso continuo?</p>
         <label for="cadastro">
           <select name="select" class="select">
-            <option value="criarConta" selected>Não, faço o uso</option>
-            <option value="criarConta">Sim, faço o uso</option>
+            <option value="" selected disabled>Selecione uma das opções:</option>
+            <option value="Sim_faz">Sim, faço o uso</option>
+            <option value="Não_faz">Não, faço o uso</option>
           </select>
         </label>
         <p class="txt2">Qual a prescrição do medicamento?</p>
         <ul class="inputs">
           <li>
-            <input name="options-group-1" type="radio" class="opt1" />
+            <input name="options-group-1" type="radio" class="opt1" value="Hipertensão"/>
             <label for="opt1">Hipertensão</label>
           </li>
           <li>
-            <input name="options-group-1" type="radio" class="opt2" />
+            <input name="options-group-1" type="radio" class="opt2" value="Rinite e alergias" />
             <label for="opt2">Rinite e alergias</label>
           </li>
           <li>
-            <input name="options-group-1" type="radio" class="opt3" />
+            <input name="options-group-1" type="radio" class="opt3" value="psiquiátricos" />
             <label for="opt3"> psiquiátricos</label>
           </li>
           <li>
-            <input name="options-group-1" type="radio" class="opt4" />
+            <input name="options-group-1" type="radio" class="opt4"  value="Anti-inflamatorios"/>
             <label for="opt4">Anti-inflamatorios</label>
           </li>
           <li>
-            <input name="options-group-1" type="radio" class="opt5" />
+            <input name="options-group-1" type="radio" class="opt5" value="Não se aplica" />
             <label for="opt5">Não se aplica</label>
           </li>
         </ul>
