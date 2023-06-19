@@ -6,11 +6,11 @@ function out(event: any) {
     event.target.innerText = "Vamos lá!"
 }
 
-function hover3(event: any) {
+function hoverpgs(event: any) {
     event.target.innerText = "Ir para proxima";
 };
 
-function out3(event: any) {
+function outpgs(event: any) {
     event.target.innerText = "Pular"
 }
 /////////////////
@@ -36,9 +36,12 @@ function pag3(){
     console.log( listaDeValores)
     console.log(valorSelecionado)
     
-    if(!check || valorSelecionado == ""){
+    if(!check){
         error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor marque uma das opções acima!";
-    }else{
+    }if(valorSelecionado == ""){
+        error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor nos informe sobre o uso de medicações";
+    }
+    if(!!check && valorSelecionado.length != 0 ){
        localStorage.setItem("uso_de_remedios",valorSelecionado);
        localStorage.setItem("tipo_de_remedios",listaDeValores);
        window.location.href="./pagina4.html";
