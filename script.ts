@@ -18,16 +18,30 @@ function out3(event: any) {
 /////////////////
 const form =document.querySelector('.form');
 const radioButtons =Array.prototype.slice.call(document.querySelectorAll('.form input[type="radio"]'));
-const enivar = document.querySelector('.enviar');
 const error = document.querySelector('.valid')!;
+const select = document.querySelector('.select') as HTMLSelectElement;
+const lista = document.querySelector(".inputs") as HTMLDListElement;
+const inputs = Array.prototype.slice.call(lista.getElementsByTagName("input")) as HTMLInputElement[]
+
 
 function pag3(){
     const check = radioButtons.some((radioButton: any) => (radioButton as any as HTMLInputElement).checked);
-
-    if(!check){
+    const valorSelecionado = select.value;
+    let listaDeValores:string = ""
+    inputs.forEach((input) => {
+        if (input.checked) {
+          listaDeValores = input.value;
+        }
+      });
+    console.log( listaDeValores)
+    console.log(valorSelecionado)
+    
+    if(!check || valorSelecionado == ""){
     error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor marque uma das opções acima!";
     }else{
-        window.location.href="./pagina4.html"
+       localStorage.setItem("uso_de_remedios",valorSelecionado);
+       localStorage.setItem("tipo_de_remedios",listaDeValores);
+       window.location.href="./pagina4.html";
     }
 
 }
