@@ -26,17 +26,8 @@ const inputs = Array.prototype.slice.call(lista.getElementsByTagName("input")) a
 
 function pag3(){
     const check = radioButtons.some((radioButton: any) => (radioButton as any as HTMLInputElement).checked);
-    const valorSelecionado = select.value;
-    let listaDeValores:string = ""
-    inputs.forEach((input) => {
-        if (input.checked) {
-          listaDeValores = input.value;
-        }
-      });
-    console.log( listaDeValores)
-    console.log(valorSelecionado)
-    
-    if(!check || valorSelecionado == ""){
+
+    if(!check){
         error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor marque uma das opções acima!";
     }else{
        localStorage.setItem("uso_de_remedios",valorSelecionado);
