@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Survey form</title>
+</head>
+<body>
+    <main>
+        <img src="/imgs/Img5.svg" alt="Garoto de camisa amarela e gravata verde, com oculo preto e cabelo levemente grisalho, usando um laptop">
+        <div class="containter">
+            <p>
+                If you or someone close to you has<br> already made a loss on the investment,<br>write down the details
+            </p>
+    
+            <textarea name="textarea" onkeyup="contarCaracteres(this.value)" type="textarea" class="txt-area" cols="" rows="15" maxlength="130"></textarea>
+            <span class="caracteres">
+                
+            </span>
+            <div class="valid">
+               
+            </div>
+            <div class="botoes">
+                <div>
+                    <a href="/4_pagina/index.html">Back</a>
+                   <a onclick="limite() ">Next</a>
+                </div>
+              <a href="/6_pagina/index.html" onmouseenter="hover(event)" onmouseleave="out(event)">Skip</a>
+            </div>
+        </div>
+        
+    </main>
+    <script src="https://kit.fontawesome.com/86df6f6ede.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
