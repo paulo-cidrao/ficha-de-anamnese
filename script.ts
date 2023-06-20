@@ -21,7 +21,7 @@ const radioButtons =Array.prototype.slice.call(document.querySelectorAll('.form 
 const error = document.querySelector('.valid')!;
 const select = document.querySelector('.select') as HTMLSelectElement;
 const lista = document.querySelector(".inputs") as HTMLDListElement;
-const inputs = Array.prototype.slice.call(lista.getElementsByTagName("input")) as HTMLInputElement[]
+const inputs = Array.prototype.slice.call(lista.getElementsByTagName("input"))! as HTMLInputElement[]
 
 
 function pag3(){
@@ -78,5 +78,25 @@ function pag4(){
         localStorage.setItem("Relato_de_sintomas",valorSelecionadochecks);
         localStorage.setItem("Sintomas", JSON.stringify(listaDeValorescheck));
         window.location.href = "./pagina5.html";
+    }
+}
+/////////////////
+// validação da pagina 5//
+/////////////////
+function limite(){
+    let txtArea = document.querySelector('.txt-area') as HTMLInputElement;
+    let caracteres:string = txtArea ? txtArea.value:"";
+    
+    if(caracteres.length !=0){
+        localStorage.setItem("descrição", caracteres)
+    }
+    window.location.href="./telaLogin.html"
+}
+function contarCaracteres(str:string){
+    let contador = str.length
+    const caracteresDigitados = document.querySelector('.caracteres')  as HTMLElement;
+    caracteresDigitados.innerHTML = 'Caracteres digitados: ' + contador + '/130';
+    if(contador == 0){
+        caracteresDigitados.remove();
     }
 }

@@ -72,3 +72,22 @@ function pag4() {
         window.location.href = "./pagina5.html";
     }
 }
+/////////////////
+// validação da pagina 5//
+/////////////////
+function limite() {
+    var txtArea = document.querySelector('.txt-area');
+    var caracteres = txtArea ? txtArea.value : "";
+    if (caracteres.length != 0) {
+        localStorage.setItem("descrição", caracteres);
+    }
+    window.location.href = "./telaLogin.html";
+}
+function contarCaracteres(str) {
+    var contador = str.length;
+    var caracteresDigitados = document.querySelector('.caracteres');
+    caracteresDigitados.innerHTML = 'Caracteres digitados: ' + contador + '/130';
+    if (contador == 0) {
+        caracteresDigitados.remove();
+    }
+}
