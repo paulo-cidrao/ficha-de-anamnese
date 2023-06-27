@@ -67,8 +67,8 @@ main > .textos {
   background-color: var(--cor-botao);
   text-decoration: none;
   color: #ffffff;
-  padding: 10px 25px;
-  border-radius: 35px;
+  padding: 0.625rem 1.563rem;
+  border-radius: 2.188rem;
 }
 .btn-pg1:hover {
   background-color: var(--cor-secundaria);
@@ -79,7 +79,7 @@ main > .textos {
   flex-direction: row;
   display: flex;
   user-select: none;
-  margin: 15px;
+  margin: 0.938rem;
 }
 
 .btn1:hover {
@@ -269,6 +269,62 @@ input[type='checkbox']:checked:after {
   font-size: 15px;
   color: #ff0000;
 }
+
+.containter{
+  display: flex;
+  flex-direction: column;
+}
+
+.containter > p{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 30px;
+  text-align: justify;
+  margin-bottom: 25px;
+  margin-right: 0.313rem;
+}
+.containter >p > em{
+  font-size: 20px;
+}
+
+.containter> textarea{
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  resize: none;
+  padding: 8px;
+  margin-bottom: 0.313rem;
+  width: 40.625rem;
+}
+
+.form-control{
+  flex-direction: column;
+    display: flex
+}
+
+.form-control > label{
+  margin-top: 25px; 
+   margin-bottom: 10px;
+   font-weight: 700;
+   font-size: 26px;
+   line-height: 30px;
+}
+.form-control > input{
+  display: flex;
+    width: 300px;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+.form-control > input :nth-child(3n){
+  width: 1rem;
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 923px) {
   main {
