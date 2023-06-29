@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Survey form</title>
+    <link rel="icon" href="./imgs/icon.png">
+    <title>3ª Questão</title>
 </head>
 <body>
     <main>
@@ -31,13 +32,21 @@
             <div class="botoes">
                 <div>
                     <a href="./pagina4.html">Voltar</a>
-                   <a onclick="limite() ">Proximo</a>
+                   <a onclick="limite()">Finalizar</a>
                 </div>
-              <a href="./telaLogin.html" onmouseenter="hoverpgs(event)" onmouseleave="outpgs(event)">Pular</a>
             </div>
         </div>
-        
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <img src="./imgs/thanks.svg" alt="Check Icon" class="check-icon">
+              <p>Obrigado por responder nossas perguntas!</br>Você Já pode fechar essa pagina!</p>
+            </div>
+          </div>
     </main>
+    <script
+      src="https://kit.fontawesome.com/86df6f6ede.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -244,6 +244,7 @@ input[type='checkbox']:checked:after {
   text-align: center;
   border-radius: 35px;
   text-decoration: none;
+  flex: 1;
 }
 
 .botoes a:hover {
@@ -256,10 +257,10 @@ input[type='checkbox']:checked:after {
   flex-direction: row;
   gap: 10px;
   text-decoration: none;
+  flex: 1;
 }
 
 .botoes > div:first-child > a {
-  width: 50%;
   text-decoration: none;
 }
 
@@ -321,7 +322,57 @@ input[type='checkbox']:checked:after {
 }
 
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+
+
+.check-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+
+.modal-content {
+  animation: modal-appear 0.3s ease-in-out;
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
