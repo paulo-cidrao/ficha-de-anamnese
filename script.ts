@@ -42,8 +42,8 @@ function pag3(){
         error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor nos informe sobre o uso de medicações";
     }
     if(!!check && valorSelecionado.length != 0 ){
-       localStorage.setItem("uso_de_remedios",valorSelecionado);
-       localStorage.setItem("tipo_de_remedios",listaDeValores);
+       localStorage.setItem("uso_de_remedios",JSON.stringify(valorSelecionado));
+       localStorage.setItem("tipo_de_remedios",JSON.stringify(listaDeValores));
        window.location.href="./pagina4.html";
     }
 
@@ -64,8 +64,6 @@ function pag4(){
         }
     });
 
-    console.log( listaDeValorescheck)
-    console.log(valorSelecionadochecks)
 
     if(!check){
         error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor, marque pelos menos uma das opções acima!";
@@ -74,8 +72,7 @@ function pag4(){
         error.innerHTML = '<i class="fa-solid fa-circle-xmark"></i>' + ' ' + "Por favor, informe se você teve algum sintoma recentemente!";
     }
     if(!!check && valorSelecionadochecks.length !=0){
-        console.log("deu certo")
-        localStorage.setItem("Relato_de_sintomas",valorSelecionadochecks);
+        localStorage.setItem("Relato_de_sintomas",JSON.stringify(valorSelecionadochecks));
         localStorage.setItem("Sintomas", JSON.stringify(listaDeValorescheck));
         window.location.href = "./pagina5.html";
     }
@@ -84,13 +81,24 @@ function pag4(){
 // validação da pagina 5//
 /////////////////
 function limite(){
+    const sintomas = JSON.parse(localStorage.getItem('Relato_de_sintomas')!);
+    const sintomasDoPaciente = JSON.parse(localStorage.getItem("Sintomas")!);
+    const medicaçõesDoPaciente = JSON.parse(localStorage.getItem('tipo_de_remedios')!);
+    const usoDeMedicações = JSON.parse(localStorage.getItem('uso_de_remedios')!);
     let txtArea = document.querySelector('.txt-area') as HTMLInputElement;
     let caracteres:string = txtArea ? txtArea.value:"";
     
     if(caracteres.length !=0){
         localStorage.setItem("descrição", caracteres)
+    }else if(!sintomas|| !sintomasDoPaciente || !medicaçõesDoPaciente || !usoDeMedicações){
+        document.querySelector('#error-message')?.remove;
+        error.innerHTML = '<div id="localhost-error"><i class="fa-solid fa-circle-xmark"></i>Por favor,verifique se você respondeu</br> todas as perguntas!</div>'
+    }else{
+        const modal = document.getElementById("myModal")!;
+        modal.style.display = "block";
     }
-    window.location.href="./telaLogin.html"
+    
+  
 }
 function contarCaracteres(str:string){
     let contador = str.length
@@ -99,4 +107,25 @@ function contarCaracteres(str:string){
     if(contador == 0){
         caracteresDigitados.remove();
     }
+}
+/////////////////
+// validação da pagina de login//
+/////////////////
+function validar(){
+    const email = (document.querySelector('.email') as HTMLInputElement).value;
+    const nome = (document.querySelector('.nome') as HTMLInputElement).value;
+    const idade = Number((document.querySelector(".idade") as HTMLInputElement).value);
+
+    if(!email || !nome || idade<0 || idade> 120 || idade < 0 || !idade ){
+        error.innerHTML = '<div id="error-message"><i class="fa-solid fa-circle-xmark"></i>Por favor,verifique os seus dados!</div>'
+    }
+    else{
+        document.querySelector('#error-message')?.remove;
+            window.location.href = "./pagina3.html" 
+    }
+}
+function validarEmail(email:string):boolean {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    );
 }
