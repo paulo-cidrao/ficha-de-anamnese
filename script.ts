@@ -21,6 +21,7 @@ const radioButtons =Array.prototype.slice.call(document.querySelectorAll('.form 
 const error = document.querySelector('.valid')!;
 const select = document.querySelector('.select') as HTMLSelectElement;
 const lista = document.querySelector(".inputs") as HTMLDListElement;
+const submitButton = document.querySelector('.enviar') as HTMLButtonElement;
 const inputs = Array.prototype.slice.call(lista.getElementsByTagName("input"))! as HTMLInputElement[]
 
 
@@ -46,6 +47,11 @@ function pag3(){
        localStorage.setItem("tipo_de_remedios",JSON.stringify(listaDeValores));
        window.location.href="./pagina4.html";
     }
+    radioButtons.forEach((radio: HTMLInputElement)  =>{
+        radio.onchange = () => {
+            submitButton.disabled = false;
+        }
+    })
 
 }
 /////////////////
@@ -56,6 +62,7 @@ const botoescheck = Array.prototype.slice.call(document.querySelectorAll('.form 
 function pag4(){
     let check = botoescheck.some((checkButton: { checked: any; }) => checkButton.checked);
     let valorSelecionadochecks = (select as HTMLSelectElement).value;
+    const checkButtons = Array.prototype.slice.call(document.querySelectorAll('input[type="check"]')) as HTMLInputElement[];
     let listaDeValorescheck:any[] = []
 
     inputs.forEach((inputs) => {
@@ -76,6 +83,14 @@ function pag4(){
         localStorage.setItem("Sintomas", JSON.stringify(listaDeValorescheck));
         window.location.href = "./pagina5.html";
     }
+
+    checkButtons.forEach(check => {
+        check.onchange = () => {
+          submitButton.disabled = false;
+          
+        }
+      })
+
 }
 /////////////////
 // validação da pagina 5//

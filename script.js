@@ -20,6 +20,7 @@ var radioButtons = Array.prototype.slice.call(document.querySelectorAll('.form i
 var error = document.querySelector('.valid');
 var select = document.querySelector('.select');
 var lista = document.querySelector(".inputs");
+var submitButton = document.querySelector('.enviar');
 var inputs = Array.prototype.slice.call(lista.getElementsByTagName("input"));
 function pag3() {
     var check = radioButtons.some(function (radioButton) { return radioButton.checked; });
@@ -43,6 +44,11 @@ function pag3() {
         localStorage.setItem("tipo_de_remedios", JSON.stringify(listaDeValores));
         window.location.href = "./pagina4.html";
     }
+    radioButtons.forEach(function (radio) {
+        radio.onchange = function () {
+            submitButton.disabled = false;
+        };
+    });
 }
 /////////////////
 // validação da pagina 4//
@@ -51,6 +57,7 @@ var botoescheck = Array.prototype.slice.call(document.querySelectorAll('.form in
 function pag4() {
     var check = botoescheck.some(function (checkButton) { return checkButton.checked; });
     var valorSelecionadochecks = select.value;
+    var checkButtons = Array.prototype.slice.call(document.querySelectorAll('input[type="check"]'));
     var listaDeValorescheck = [];
     inputs.forEach(function (inputs) {
         if (inputs.checked) {
@@ -68,6 +75,11 @@ function pag4() {
         localStorage.setItem("Sintomas", JSON.stringify(listaDeValorescheck));
         window.location.href = "./pagina5.html";
     }
+    checkButtons.forEach(function (check) {
+        check.onchange = function () {
+            submitButton.disabled = false;
+        };
+    });
 }
 /////////////////
 // validação da pagina 5//
@@ -118,10 +130,4 @@ function validar() {
 }
 function validarEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
-/////////////////
-// Função encerrar//
-/////////////////
-function encerrar() {
-    window.close();
 }
