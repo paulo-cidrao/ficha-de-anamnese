@@ -388,11 +388,6 @@ input[type='checkbox']:checked:after {
     align-items: flex-start;
   }
 
-  img {
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
-
   .botoes {
     width: 100%;
   }
@@ -400,10 +395,21 @@ input[type='checkbox']:checked:after {
   .botoes a {
     padding: 10px;
   }
-
+  .selec{
+    width: 100%;
+  }
+  .inputs li input{
+    margin-right:  5px;
+  }
+.containter > textarea{
+  width: 100%;
+}
   .txt2 {
     margin-top: 20px;
     margin-bottom: 5px;
+  }
+  .form-control > input {
+    width: 100%;
   }
 
   .textos > h1 {
