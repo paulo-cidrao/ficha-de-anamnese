@@ -135,6 +135,10 @@ function validar(){
         error.innerHTML = '<div id="error-message"><i class="fa-solid fa-circle-xmark"></i>Por favor,verifique os seus dados!</div>'
     }
     else{
+        String(idade)
+        localStorage.setItem("email",email);
+        localStorage.setItem("nome",nome);
+        localStorage.setItem("idade",idade.toString())
         document.querySelector('#error-message')?.remove;
             window.location.href = "./pagina3.html" 
     }
